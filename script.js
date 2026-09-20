@@ -8,7 +8,7 @@ function startAutoScroll(){
   if(autoScrollTimer)clearInterval(autoScrollTimer);
   autoScrollActive=true;
   document.documentElement.classList.add("auto-scroll-active");
-  const speed=1.2;
+  const speed=1.15;
   autoScrollTimer=setInterval(()=>{
     if(!autoScrollActive)return;
     const max=document.documentElement.scrollHeight-window.innerHeight;
