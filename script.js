@@ -8,7 +8,7 @@ function startAutoScroll(){
   if(autoScrollTimer)clearInterval(autoScrollTimer);
   autoScrollActive=true;
   document.documentElement.classList.add("auto-scroll-active");
-  const speed=0.65;
+  const speed=1.15;
   autoScrollTimer=setInterval(()=>{
     if(!autoScrollActive)return;
     const max= document.documentElement.scrollHeight-window.innerHeight;
@@ -20,7 +20,7 @@ function startAutoScroll(){
       return;
     }
     window.scrollBy(0,speed);
-  },30);
+  },16);
 }
 
 function pauseAutoScroll(){
