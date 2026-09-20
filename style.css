@@ -15,6 +15,7 @@ body:after{inset:22px;border:1px solid rgba(109,31,43,.08)}
 .mandala:before,.mandala:after{content:"";position:absolute;inset:35px;border:1px dashed rgba(109,31,43,.18);border-radius:50%}
 .mandala:after{inset:90px;border:1px solid rgba(184,137,60,.18)}
 .ganesha,.footer-symbol{font-family:Georgia,serif;color:var(--burgundy);font-size:52px}
+.gurudeva-mantra{margin-top:-2px;margin-bottom:18px;font:600 13px/1.4 "Cormorant Garamond",serif;letter-spacing:.16em;color:var(--gold)}
 .eyebrow{text-transform:uppercase;letter-spacing:.28em;font-size:11px;color:var(--gold);font-weight:700;margin:0 0 15px}
 .welcome h1{font:600 clamp(38px,7vw,76px)/1 "Cormorant Garamond",serif;color:var(--burgundy);margin:4px 0 10px}
 .welcome-names{font:400 clamp(40px,8vw,78px)/1.1 "Great Vibes",cursive;color:var(--deep);margin:10px 0 30px}
@@ -60,6 +61,9 @@ h2{font:600 clamp(30px,5vw,45px)/1.1 "Cormorant Garamond";color:var(--burgundy);
 input,textarea{display:block;width:100%;margin-top:7px;border:1px solid var(--line);background:#fffdf8;border-radius:10px;padding:13px;font:14px Manrope;color:var(--ink);outline:none}
 textarea{min-height:110px;resize:vertical}
 input:focus,textarea:focus{border-color:var(--gold)}
+.wish-quotes{display:grid;gap:10px;max-width:620px;margin:22px auto 28px;text-align:center}
+.wish-quote{padding:16px 20px;border:1px solid rgba(184,137,60,.28);border-radius:14px;background:rgba(255,250,242,.72);color:var(--burgundy);font:500 18px/1.45 "Cormorant Garamond",serif;box-shadow:0 8px 24px rgba(64,21,30,.05);opacity:.5;transform:translateY(4px);transition:opacity .5s,transform .5s}
+.wish-quote.active{opacity:1;transform:translateY(0);border-color:rgba(184,137,60,.55)}
 .wish-list{display:grid;gap:12px;text-align:left}
 .wish{padding:16px 18px;border-left:3px solid var(--gold);background:#fffdf8}
 .wish strong{color:var(--burgundy);font-size:13px}.wish p{font:17px/1.45 "Cormorant Garamond";margin:5px 0 0}
