@@ -107,7 +107,7 @@
       <div class="flower-corner right">❀</div>
       <p class="eyebrow">A little love from you</p>
       <h2>Guest Wishes <span class="live-count" id="wishHeadingCount">0</span></h2>
-      <p class="small">Leave a blessing or a message for Ashil &amp; Sneha.</p>
+      <p class="small">Leave a blessing or a message for Ashil &amp; Sneha. Wishes are shared publicly with everyone.</p>
       <div class="wish-quotes" aria-label="Wedding wish inspirations">
         <div class="wish-quote active">“May your love grow deeper with every beautiful season of life.”</div>
         <div class="wish-quote">“Two hearts, one journey, countless memories. Wishing you a lifetime of happiness.”</div>
@@ -124,7 +124,8 @@
     <section id="attendance" class="attendance section">
       <div class="attendance-card">
         <p class="eyebrow">We would love to know</p>
-        <h2>Guest Attendance</h2>
+        <h2>Guests Attending <span class="live-count" id="attendancePublicCount">0</span></h2>
+        <p class="small">The number shown is the total confirmed guests. Guest names are kept private.</p>
         <form id="attendanceForm" class="attendance-form">
           <label>Your name<input id="attendanceName" maxlength="60" required placeholder="Your name"></label>
           <label>Attendance<select id="attendanceStatus" required><option value="">Choose one</option><option value="Attending">Attending</option><option value="Maybe">Maybe</option><option value="Not attending">Not attending</option></select></label>
@@ -132,7 +133,6 @@
           <button class="gold-btn" type="submit">Confirm Attendance</button>
           <p id="attendanceStatusMessage" class="form-message" role="status"></p>
         </form>
-        <div id="attendanceList" class="attendance-list"></div>
       </div>
     </section>
 
