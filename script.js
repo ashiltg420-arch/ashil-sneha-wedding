@@ -1,9 +1,47 @@
 const welcome=document.getElementById("welcome");
 const invitation=document.getElementById("invitation");
+let autoScrollTimer=null;
+let autoScrollActive=false;
+
+function startAutoScroll(){
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  if(autoScrollTimer)clearInterval(autoScrollTimer);
+  autoScrollActive=true;
+  document.documentElement.classList.add("auto-scroll-active");
+  const speed=0.65;
+  autoScrollTimer=setInterval(()=>{
+    if(!autoScrollActive)return;
+    const max= document.documentElement.scrollHeight-window.innerHeight;
+    if(window.scrollY >= max-4){
+      clearInterval(autoScrollTimer);
+      autoScrollTimer=null;
+      autoScrollActive=false;
+      document.documentElement.classList.remove("auto-scroll-active");
+      return;
+    }
+    window.scrollBy(0,speed);
+  },30);
+}
+
+function pauseAutoScroll(){
+  autoScrollActive=false;
+  if(autoScrollTimer){clearInterval(autoScrollTimer);autoScrollTimer=null;}
+  document.documentElement.classList.remove("auto-scroll-active");
+}
+
 document.getElementById("openInvite").addEventListener("click",()=>{
-  welcome.style.display="none"; invitation.classList.remove("hidden");
-  window.scrollTo(0,0); window.dispatchEvent(new Event("resize"));
+  welcome.style.display="none";
+  invitation.classList.remove("hidden");
+  window.scrollTo({top:0,behavior:"auto"});
+  window.dispatchEvent(new Event("resize"));
   history.replaceState(null,"","#invitation");
+  setTimeout(startAutoScroll,900);
+});
+
+["wheel","touchstart","pointerdown","keydown"].forEach(evt=>{
+  window.addEventListener(evt,()=>{
+    if(autoScrollActive)pauseAutoScroll();
+  },{passive:true});
 });
 
 function petals(){
@@ -33,20 +71,25 @@ countdown();setInterval(countdown,1000);
 const form=document.getElementById("wishForm"), list=document.getElementById("wishList");
 const KEY="ashil-sneha-wishes";
 function render(){
-  const wishes=JSON.parse(localStorage.getItem(KEY)||"[]");
+  if(!list)return;
+  let wishes=[];
+  try{wishes=JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){wishes=[]}
   list.innerHTML=wishes.length?wishes.map(w=>`<article class="wish"><strong>${escapeHtml(w.name)}</strong><p>${escapeHtml(w.message)}</p></article>`).join(""):'<p class="empty">Be the first to leave a blessing. ♡</p>';
+  const count=document.getElementById("wishHeadingCount");
+  if(count)count.textContent=wishes.length;
 }
-function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
-form.addEventListener("submit",e=>{
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
+if(form)form.addEventListener("submit",e=>{
   e.preventDefault();
   const name=document.getElementById("wishName").value.trim(), message=document.getElementById("wishMessage").value.trim();
   if(!name||!message)return;
-  const wishes=JSON.parse(localStorage.getItem(KEY)||"[]");
-  wishes.unshift({name,message}); localStorage.setItem(KEY,JSON.stringify(wishes.slice(0,50)));
+  let wishes=[];
+  try{wishes=JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){}
+  wishes.unshift({name,message});
+  localStorage.setItem(KEY,JSON.stringify(wishes.slice(0,50)));
   form.reset(); render();
 });
 render();
-
 
 const wishQuotes=document.querySelectorAll(".wish-quote");
 if(wishQuotes.length>1){
@@ -58,14 +101,13 @@ if(wishQuotes.length>1){
   },5000);
 }
 
-
-/* Tap a suggested wish to copy it into the message box */
 wishQuotes.forEach(quote=>{
   quote.setAttribute("role","button");
   quote.setAttribute("tabindex","0");
   quote.title="Click to use this wish";
   const useQuote=()=>{
     const messageBox=document.getElementById("wishMessage");
+    if(!messageBox)return;
     messageBox.value=quote.textContent.replace(/[“”]/g,"").trim();
     messageBox.focus();
     messageBox.dispatchEvent(new Event("input",{bubbles:true}));
@@ -76,8 +118,6 @@ wishQuotes.forEach(quote=>{
   });
 });
 
-
-/* Guest attendance */
 const attendanceForm=document.getElementById("attendanceForm");
 const attendanceList=document.getElementById("attendanceList");
 const attendanceStatusMessage=document.getElementById("attendanceStatusMessage");
@@ -85,13 +125,7 @@ const ATTENDANCE_KEY="ashil-sneha-attendance";
 function getAttendance(){try{return JSON.parse(localStorage.getItem(ATTENDANCE_KEY)||"[]")}catch(e){return[]}}
 function renderAttendance(){
   if(!attendanceList)return;
-  const entries=getAttendance(), attending=entries.filter(x=>x.status==="Attending");
-  const people=attending.reduce((sum,x)=>sum+Number(x.people||0),0);
-  const wishes=JSON.parse(localStorage.getItem(KEY)||"[]");
-  document.getElementById("confirmedGuestCount").textContent=attending.length;
-  document.getElementById("attendingPeopleCount").textContent=people;
-  document.getElementById("wishCount").textContent=wishes.length;
-  document.getElementById("wishHeadingCount").textContent=wishes.length;
+  const entries=getAttendance();
   attendanceList.innerHTML=entries.length?entries.map(x=>`<article class="attendance-entry"><div><strong>${escapeHtml(x.name)}</strong><span>${escapeHtml(x.status)} · ${Number(x.people)} ${Number(x.people)===1?"guest":"guests"}</span></div></article>`).join(""):'<p class="empty">Be the first guest to confirm. ♡</p>';
 }
 if(attendanceForm){
@@ -103,11 +137,11 @@ if(attendanceForm){
     const entries=getAttendance();
     entries.unshift({name,status,people:status==="Not attending"?0:people});
     localStorage.setItem(ATTENDANCE_KEY,JSON.stringify(entries.slice(0,100)));
-    attendanceForm.reset(); document.getElementById("attendancePeople").value=1;
+    attendanceForm.reset();
+    document.getElementById("attendancePeople").value=1;
     attendanceStatusMessage.textContent="Thank you! Your attendance has been recorded. ♡";
-    renderAttendance(); setTimeout(()=>attendanceStatusMessage.textContent="",3500);
+    renderAttendance();
+    setTimeout(()=>attendanceStatusMessage.textContent="",3500);
   });
 }
 renderAttendance();
-const baseRender=render;
-render=function(){baseRender();renderAttendance()};
