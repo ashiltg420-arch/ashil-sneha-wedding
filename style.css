@@ -106,3 +106,56 @@ transform:rotate(-25deg)}
 .welcome-card-corner.top-left{left:-18px;top:-18px;transform:rotate(-10deg)}
 .welcome-card-corner.bottom-right{right:-18px;bottom:-18px;transform:rotate(170deg)}
 @media(max-width:700px){.welcome-card{min-height:78vh;padding-left:25px;padding-right:25px}.welcome-card-corner{transform:scale(.82) rotate(-10deg)}.welcome-card-corner.bottom-right{transform:scale(.82) rotate(170deg)}}
+
+
+/* Ornate Indian palace invitation opening theme */
+.welcome{background:linear-gradient(135deg,#8f4037 0%,#b66b48 48%,#8b693f 100%);padding:22px 14px}
+.welcome-card{width:min(94vw,470px);min-height:min(92vh,820px);padding:145px 34px 185px;border-radius:10px;background:#f4e8cf;box-shadow:0 30px 80px rgba(43,20,12,.35);border:1px solid rgba(184,137,60,.7)}
+.welcome-card:before,.welcome-card:after{display:none}
+.welcome-card:after{content:"";display:block;position:absolute;inset:12px;border:1px solid rgba(184,137,60,.55);border-radius:4px;pointer-events:none}
+.invitation-arch{position:absolute;left:10%;right:10%;top:-2px;height:145px;border:3px solid #b8893c;border-bottom:0;border-radius:150px 150px 0 0;background:linear-gradient(180deg,rgba(177,132,64,.18),rgba(255,250,242,.05));box-shadow:inset 0 0 0 5px rgba(255,248,226,.35)}
+.invitation-arch:before,.invitation-arch:after{content:"";position:absolute;top:14px;width:20px;height:115px;border-top:2px solid #b8893c;border-bottom:2px solid #b8893c;opacity:.65}
+.invitation-arch:before{left:17px}.invitation-arch:after{right:17px}
+.ganesha-line{position:absolute;z-index:5;top:42px;left:50%;transform:translateX(-50%);width:62px;height:62px;border-radius:50%;display:grid;place-items:center;color:#b8893c;background:#f4e8cf;box-shadow:0 0 0 2px #b8893c,0 0 0 5px #f4e8cf,0 0 0 6px rgba(184,137,60,.65)}
+.ganesha-line svg{width:47px;height:47px}
+.brass-bells{position:absolute;left:9px;top:18px;z-index:8;display:flex;flex-direction:column;gap:3px;transform:rotate(-6deg)}
+.brass-bells span{font-size:25px;filter:saturate(.75) sepia(.45);line-height:1}
+.brass-bells span:nth-child(2){margin-left:18px;font-size:21px}.brass-bells span:nth-child(3){margin-left:5px;font-size:18px}
+.bougainvillea{position:absolute;right:-4px;top:4px;width:155px;height:180px;z-index:8;transform:rotate(7deg);background:
+radial-gradient(circle at 65% 18%,#e94c86 0 7px,transparent 8px),
+radial-gradient(circle at 48% 29%,#f66a9b 0 8px,transparent 9px),
+radial-gradient(circle at 78% 37%,#ef4f8b 0 7px,transparent 8px),
+radial-gradient(circle at 38% 50%,#f26a9a 0 7px,transparent 8px),
+radial-gradient(circle at 67% 60%,#e84782 0 8px,transparent 9px),
+radial-gradient(ellipse at 52% 42%,#4e7e3c 0 8px,transparent 9px),
+radial-gradient(ellipse at 76% 52%,#5d8b43 0 9px,transparent 10px),
+linear-gradient(125deg,transparent 48%,#4d7438 49% 51%,transparent 52%)}
+.welcome-icon{position:relative;z-index:6;width:66px;height:66px;margin-bottom:14px!important;background:#6d1f2b!important;box-shadow:0 8px 20px rgba(64,21,30,.22)!important}
+.gurudeva-mantra{position:relative;z-index:6;margin-bottom:12px;color:#8c6a3e}
+.welcome-card .eyebrow,.welcome-card h1,.welcome-card .welcome-names,.welcome-card .gold-btn{position:relative;z-index:6}
+.welcome-card h1{font-size:clamp(34px,7vw,60px)}
+.welcome-card .welcome-names{font-size:clamp(38px,8vw,62px);margin-bottom:24px}
+.welcome-card .gold-btn{bottom:142px;z-index:10}
+.palace-landscape{position:absolute;left:0;right:0;bottom:0;height:170px;background:linear-gradient(180deg,#d5a85d 0%,#c18c45 28%,#6c6b4b 30%,#6c8b75 31%,#58766b 100%);overflow:hidden;border-top:2px solid rgba(184,137,60,.7);z-index:4}
+.palace-landscape:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,235,175,.35),transparent 55%);pointer-events:none}
+.palace{position:absolute;bottom:55px;width:120px;height:78px;background:linear-gradient(#d5a45a,#a96f35);border:2px solid rgba(91,55,28,.45);box-shadow:inset 0 0 20px rgba(255,228,160,.25)}
+.palace-left{left:-10px}.palace-center{left:50%;transform:translateX(-50%);width:160px;height:94px}.palace-right{right:-10px}
+.palace:before{content:"";position:absolute;left:15%;right:15%;top:-31px;height:48px;border-radius:50% 50% 0 0;background:#b77d3d;border:2px solid rgba(91,55,28,.45);clip-path:polygon(0 100%,50% 0,100% 100%)}
+.palace i{display:inline-block;width:12px;height:24px;margin:34px 7px 0;background:#5d3b27;border-radius:8px 8px 0 0;opacity:.8}
+.palace b{position:absolute;left:35%;right:35%;bottom:0;height:43px;background:#6b4129;border-radius:40px 40px 0 0}
+.palace-center i{margin-top:42px;width:13px;height:29px}.palace-center:after{content:"";position:absolute;left:38%;right:38%;top:-48px;height:55px;border-radius:50% 50% 0 0;background:#c88e48;clip-path:polygon(0 100%,50% 0,100% 100%)}
+.palace-water{position:absolute;left:0;right:0;bottom:0;height:55px;background:repeating-linear-gradient(175deg,rgba(255,226,164,.25) 0 2px,transparent 2px 12px);opacity:.8}
+.landscape-flowers{position:absolute;bottom:35px;width:105px;height:55px;background:
+radial-gradient(circle at 20% 60%,#f5f1e7 0 5px,transparent 6px),
+radial-gradient(circle at 37% 45%,#e84f87 0 6px,transparent 7px),
+radial-gradient(circle at 55% 70%,#f36a9a 0 6px,transparent 7px),
+radial-gradient(circle at 72% 42%,#fff8ed 0 5px,transparent 6px),
+radial-gradient(ellipse at 50% 85%,#527c40 0 12px,transparent 13px)}
+.landscape-flowers.left{left:-5px}.landscape-flowers.right{right:-5px;transform:scaleX(-1)}
+@media(max-width:700px){
+  .welcome-card{min-height:94vh;padding-top:135px;padding-bottom:180px}
+  .palace-landscape{height:155px}.palace{transform:scale(.82);transform-origin:bottom}
+  .palace-center{transform:translateX(-50%) scale(.9)}
+  .welcome-card .gold-btn{bottom:130px}
+  .bougainvillea{transform:scale(.82) rotate(7deg);transform-origin:top right}
+}
