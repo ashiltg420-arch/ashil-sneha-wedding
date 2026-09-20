@@ -57,3 +57,21 @@ if(wishQuotes.length>1){
     wishQuotes[quoteIndex].classList.add("active");
   },5000);
 }
+
+
+/* Tap a suggested wish to copy it into the message box */
+wishQuotes.forEach(quote=>{
+  quote.setAttribute("role","button");
+  quote.setAttribute("tabindex","0");
+  quote.title="Click to use this wish";
+  const useQuote=()=>{
+    const messageBox=document.getElementById("wishMessage");
+    messageBox.value=quote.textContent.replace(/[“”]/g,"").trim();
+    messageBox.focus();
+    messageBox.dispatchEvent(new Event("input",{bubbles:true}));
+  };
+  quote.addEventListener("click",useQuote);
+  quote.addEventListener("keydown",e=>{
+    if(e.key==="Enter"||e.key===" "){e.preventDefault();useQuote();}
+  });
+});
