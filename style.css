@@ -173,3 +173,17 @@ radial-gradient(ellipse at 50% 85%,#527c40 0 12px,transparent 13px)}
 .welcome-card .welcome-names{z-index:4;color:#40151e;font-size:clamp(38px,8vw,62px);margin:8px 0 0}
 .welcome-card .gold-btn{z-index:5;bottom:48px;min-width:190px}
 @media(max-width:700px){.welcome-card{min-height:78vh;padding-left:25px;padding-right:25px}.welcome-card .gold-btn{bottom:48px}}
+
+
+/* Delicate lily corner florals inside invitation */
+.corner-floral-frame{position:relative;overflow:hidden}
+.lily-corner{position:absolute;z-index:0;color:#b8893c;font-family:Georgia,serif;font-size:70px;line-height:1;opacity:.72;text-shadow:0 3px 10px rgba(64,21,30,.08);filter:drop-shadow(0 2px 2px rgba(184,137,60,.12))}
+.lily-corner:before,.lily-corner:after{content:"";position:absolute;width:44px;height:18px;border-radius:100% 0 100% 0;background:rgba(86,125,63,.72);transform-origin:center}
+.lily-corner:before{transform:rotate(35deg);left:35px;top:42px}
+.lily-corner:after{transform:rotate(-25deg);left:48px;top:20px}
+.lily-top-left{top:10px;left:8px;transform:rotate(-22deg)}
+.lily-top-right{top:10px;right:8px;transform:rotate(22deg) scaleX(-1)}
+.lily-bottom-left{bottom:8px;left:8px;transform:rotate(202deg)}
+.lily-bottom-right{bottom:8px;right:8px;transform:rotate(158deg) scaleX(-1)}
+.corner-floral-frame>*:not(.lily-corner){position:relative;z-index:1}
+@media(max-width:700px){.lily-corner{font-size:52px}.lily-corner:before,.lily-corner:after{width:34px;height:14px}.lily-top-left{top:8px;left:3px}.lily-top-right{top:8px;right:3px}.lily-bottom-left{bottom:5px;left:3px}.lily-bottom-right{bottom:5px;right:3px}}
