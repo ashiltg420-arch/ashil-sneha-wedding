@@ -46,3 +46,14 @@ form.addEventListener("submit",e=>{
   form.reset(); render();
 });
 render();
+
+
+const wishQuotes=document.querySelectorAll(".wish-quote");
+if(wishQuotes.length>1){
+  let quoteIndex=0;
+  setInterval(()=>{
+    wishQuotes[quoteIndex].classList.remove("active");
+    quoteIndex=(quoteIndex+1)%wishQuotes.length;
+    wishQuotes[quoteIndex].classList.add("active");
+  },5000);
+}
