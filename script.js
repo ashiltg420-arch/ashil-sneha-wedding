@@ -77,7 +77,7 @@ wishQuotes.forEach(quote=>{
 });
 
 
-/* Guest attendance and greeting window */
+/* Guest attendance */
 const attendanceForm=document.getElementById("attendanceForm");
 const attendanceList=document.getElementById("attendanceList");
 const attendanceStatusMessage=document.getElementById("attendanceStatusMessage");
@@ -92,17 +92,16 @@ function renderAttendance(){
   document.getElementById("attendingPeopleCount").textContent=people;
   document.getElementById("wishCount").textContent=wishes.length;
   document.getElementById("wishHeadingCount").textContent=wishes.length;
-  attendanceList.innerHTML=entries.length?entries.map(x=>`<article class="attendance-entry"><div><strong>${escapeHtml(x.name)}</strong><span>${escapeHtml(x.status)} · ${Number(x.people)} ${Number(x.people)===1?"guest":"guests"}</span></div>${x.message?`<p>“${escapeHtml(x.message)}”</p>`:""}</article>`).join(""):'<p class="empty">Be the first guest to confirm. ♡</p>';
+  attendanceList.innerHTML=entries.length?entries.map(x=>`<article class="attendance-entry"><div><strong>${escapeHtml(x.name)}</strong><span>${escapeHtml(x.status)} · ${Number(x.people)} ${Number(x.people)===1?"guest":"guests"}</span></div></article>`).join(""):'<p class="empty">Be the first guest to confirm. ♡</p>';
 }
 if(attendanceForm){
   attendanceForm.addEventListener("submit",e=>{
     e.preventDefault();
     const name=document.getElementById("attendanceName").value.trim(), status=document.getElementById("attendanceStatus").value;
     const people=Math.max(1,Math.min(20,Number(document.getElementById("attendancePeople").value||1)));
-    const message=document.getElementById("attendanceMessage").value.trim();
     if(!name||!status)return;
     const entries=getAttendance();
-    entries.unshift({name,status,people:status==="Not attending"?0:people,message});
+    entries.unshift({name,status,people:status==="Not attending"?0:people});
     localStorage.setItem(ATTENDANCE_KEY,JSON.stringify(entries.slice(0,100)));
     attendanceForm.reset(); document.getElementById("attendancePeople").value=1;
     attendanceStatusMessage.textContent="Thank you! Your attendance has been recorded. ♡";
