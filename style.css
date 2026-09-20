@@ -187,3 +187,23 @@ radial-gradient(ellipse at 50% 85%,#527c40 0 12px,transparent 13px)}
 .lily-bottom-right{bottom:8px;right:8px;transform:rotate(158deg) scaleX(-1)}
 .corner-floral-frame>*:not(.lily-corner){position:relative;z-index:1}
 @media(max-width:700px){.lily-corner{font-size:52px}.lily-corner:before,.lily-corner:after{width:34px;height:14px}.lily-top-left{top:8px;left:3px}.lily-top-right{top:8px;right:3px}.lily-bottom-left{bottom:5px;left:3px}.lily-bottom-right{bottom:5px;right:3px}}
+
+
+/* Matching rose + green lily corner accents throughout the invitation */
+.card,.detail-card,.message,.compliments,.wishes{position:relative;overflow:hidden}
+.card:before,.card:after,.detail-card:before,.detail-card:after,.message:before,.message:after,.compliments:before,.compliments:after,.wishes:before,.wishes:after{content:"";position:absolute;pointer-events:none;z-index:0;width:115px;height:105px;background:
+radial-gradient(circle at 28% 30%,#c94f62 0 8px,transparent 9px),
+radial-gradient(circle at 43% 18%,#e0717e 0 7px,transparent 8px),
+radial-gradient(circle at 58% 34%,#b93f55 0 9px,transparent 10px),
+radial-gradient(circle at 35% 50%,#e48a91 0 6px,transparent 7px),
+radial-gradient(ellipse at 68% 55%,#5f8b48 0 9px,transparent 10px),
+radial-gradient(ellipse at 52% 72%,#4f7e3e 0 10px,transparent 11px),
+radial-gradient(ellipse at 78% 25%,#739a58 0 7px,transparent 8px)}
+.card:before,.detail-card:before,.message:before,.compliments:before,.wishes:before{top:-10px;left:-8px;transform:rotate(-12deg)}
+.card:after,.detail-card:after,.message:after,.compliments:after,.wishes:after{right:-8px;bottom:-10px;transform:rotate(168deg)}
+.card>*:not(:before):not(:after),.detail-card>*:not(:before):not(:after),.message>*:not(:before):not(:after),.compliments>*:not(:before):not(:after),.wishes>*:not(:before):not(:after){position:relative;z-index:1}
+/* Larger lily petals layered over the rose clusters */
+.card:before,.detail-card:before,.message:before,.compliments:before,.wishes:before{background-color:transparent}
+@media(max-width:700px){
+  .card:before,.card:after,.detail-card:before,.detail-card:after,.message:before,.message:after,.compliments:before,.compliments:after,.wishes:before,.wishes:after{width:82px;height:78px;background-size:100% 100%}
+}
