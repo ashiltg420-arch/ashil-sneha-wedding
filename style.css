@@ -89,3 +89,20 @@ footer .footer-symbol{color:#d4a65c;font-size:35px}footer p{font:32px "Great Vib
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 
 .welcome-card .floral-copy{position:absolute;left:24px;right:24px;top:105px;bottom:105px;pointer-events:none}
+
+.welcome-card-corner{position:absolute;width:190px;height:210px;pointer-events:none;background:
+radial-gradient(circle at 18% 22%,#f36b9b 0 6px,transparent 7px),
+radial-gradient(circle at 35% 14%,#ff86ad 0 7px,transparent 8px),
+radial-gradient(circle at 51% 25%,#e84d83 0 6px,transparent 7px),
+radial-gradient(circle at 27% 39%,#ff709f 0 5px,transparent 6px),
+radial-gradient(circle at 48% 47%,#e95387 0 7px,transparent 8px),
+linear-gradient(120deg,transparent 47%,#557f3e 48% 50%,transparent 51%);
+opacity:.95}
+.welcome-card-corner:after{content:"";position:absolute;inset:0;background:
+radial-gradient(ellipse at 35% 35%,#4f813e 0 8px,transparent 9px),
+radial-gradient(ellipse at 55% 55%,#668d49 0 9px,transparent 10px),
+radial-gradient(ellipse at 24% 68%,#4b783b 0 8px,transparent 9px);
+transform:rotate(-25deg)}
+.welcome-card-corner.top-left{left:-18px;top:-18px;transform:rotate(-10deg)}
+.welcome-card-corner.bottom-right{right:-18px;bottom:-18px;transform:rotate(170deg)}
+@media(max-width:700px){.welcome-card{min-height:78vh;padding-left:25px;padding-right:25px}.welcome-card-corner{transform:scale(.82) rotate(-10deg)}.welcome-card-corner.bottom-right{transform:scale(.82) rotate(170deg)}}
