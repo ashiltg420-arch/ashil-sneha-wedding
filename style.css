@@ -159,3 +159,17 @@ radial-gradient(ellipse at 50% 85%,#527c40 0 12px,transparent 13px)}
   .welcome-card .gold-btn{bottom:130px}
   .bougainvillea{transform:scale(.82) rotate(7deg);transform-origin:top right}
 }
+
+
+/* Clean floral opening card theme */
+.welcome{min-height:100vh;padding:28px 18px;background:linear-gradient(135deg,#9d493e 0%,#ad5d48 45%,#947043 100%)}
+.welcome-card{width:min(88vw,430px);min-height:min(82vh,720px);padding:110px 34px 120px;justify-content:flex-start;background:#f7efe2;border-radius:28px;box-shadow:0 28px 70px rgba(45,20,15,.28);border:0}
+.welcome-card:before,.welcome-card:after{display:none}
+.welcome-card-corner{display:block;z-index:3}
+.welcome-icon{z-index:4;width:76px;height:76px;margin:0 0 28px!important;background:#6d1f2b!important;color:#fff!important}
+.welcome-card .gurudeva-mantra{z-index:4;margin-bottom:18px;color:#6d1f2b;font:600 13px/1.4 "Cormorant Garamond",serif;letter-spacing:.12em}
+.welcome-card .eyebrow{z-index:4;color:#b8893c}
+.welcome-card h1{z-index:4;color:#6d1f2b;font-size:clamp(38px,7vw,60px);margin:4px 0 10px}
+.welcome-card .welcome-names{z-index:4;color:#40151e;font-size:clamp(38px,8vw,62px);margin:8px 0 0}
+.welcome-card .gold-btn{z-index:5;bottom:48px;min-width:190px}
+@media(max-width:700px){.welcome-card{min-height:78vh;padding-left:25px;padding-right:25px}.welcome-card .gold-btn{bottom:48px}}
