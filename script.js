@@ -1,5 +1,10 @@
 const welcome=document.getElementById("welcome");
 const invitation=document.getElementById("invitation");
+const weddingMusic=document.getElementById("weddingMusic");
+const musicToggle=document.getElementById("musicToggle");
+function startWeddingMusic(){if(!weddingMusic)return;weddingMusic.volume=0.32;weddingMusic.play().catch(()=>{});}
+function updateMusicToggle(){if(!musicToggle||!weddingMusic)return;const on=!weddingMusic.paused;musicToggle.setAttribute("aria-pressed",String(on));musicToggle.setAttribute("aria-label",on?"Turn wedding music off":"Turn wedding music on");musicToggle.innerHTML=on?"♫ <span>Music On</span>":"♫ <span>Music Off</span>";}
+if(musicToggle&&weddingMusic){musicToggle.addEventListener("click",()=>{if(weddingMusic.paused)weddingMusic.play().catch(()=>{});else weddingMusic.pause();setTimeout(updateMusicToggle,50);});weddingMusic.addEventListener("play",updateMusicToggle);weddingMusic.addEventListener("pause",updateMusicToggle);}
 let autoScrollTimer=null;
 let autoScrollActive=false;
 
@@ -35,6 +40,8 @@ document.getElementById("openInvite").addEventListener("click",()=>{
   window.scrollTo({top:0,behavior:"auto"});
   window.dispatchEvent(new Event("resize"));
   history.replaceState(null,"","#invitation");
+  startWeddingMusic();
+  updateMusicToggle();
   setTimeout(startAutoScroll,900);
 });
 
