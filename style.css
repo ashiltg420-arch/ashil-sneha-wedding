@@ -44,6 +44,8 @@ h2{font:600 clamp(30px,5vw,45px)/1.1 "Cormorant Garamond";color:var(--burgundy);
 .date{font:600 25px "Cormorant Garamond";color:var(--burgundy)!important}
 .detail-card strong{color:var(--burgundy)}
 .rule{height:1px;background:var(--line);width:70px;margin:25px auto}
+.map-btn{display:inline-flex;align-items:center;justify-content:center;margin-top:18px;padding:11px 18px;border:1px solid var(--gold);border-radius:999px;background:transparent;color:var(--burgundy);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.06em;transition:.25s}
+.map-btn:hover{background:var(--burgundy);color:#fff8ee;transform:translateY(-2px)}
 .message{text-align:center;padding:70px 20px}
 .quote-mark{font:90px Georgia;color:rgba(184,137,60,.4);height:65px}
 .message p{font:500 clamp(28px,4vw,43px)/1.25 "Cormorant Garamond";color:var(--burgundy);max-width:700px;margin:0 auto}
