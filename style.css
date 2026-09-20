@@ -250,3 +250,7 @@ footer{padding:42px 18px 62px}
 /* Auto-scroll state: starts only after the visitor opens the invitation */
 html.auto-scroll-active{scroll-behavior:auto}
 body.auto-scroll-active{cursor:default}
+
+
+/* Wedding music control */
+#weddingMusic{display:none}.music-toggle{position:fixed;right:28px;bottom:24px;z-index:50;border:1px solid rgba(184,137,60,.7);background:rgba(64,21,30,.94);color:#fff8ee;border-radius:999px;padding:10px 15px;font:700 11px Manrope;letter-spacing:.04em;box-shadow:0 8px 24px rgba(64,21,30,.2);cursor:pointer;backdrop-filter:blur(8px)}.music-toggle span{margin-left:5px}@media(max-width:700px){.music-toggle{right:16px;bottom:16px;padding:9px 13px}}
