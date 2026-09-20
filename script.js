@@ -5,6 +5,21 @@ const musicToggle=document.getElementById("musicToggle");
 function startWeddingMusic(){if(!weddingMusic)return;weddingMusic.volume=0.32;weddingMusic.play().catch(()=>{});}
 function updateMusicToggle(){if(!musicToggle||!weddingMusic)return;const on=!weddingMusic.paused;musicToggle.setAttribute("aria-pressed",String(on));musicToggle.setAttribute("aria-label",on?"Turn wedding music off":"Turn wedding music on");musicToggle.innerHTML=on?"♫ <span>Music On</span>":"♫ <span>Music Off</span>";}
 if(musicToggle&&weddingMusic){musicToggle.addEventListener("click",()=>{if(weddingMusic.paused)weddingMusic.play().catch(()=>{});else weddingMusic.pause();setTimeout(updateMusicToggle,50);});weddingMusic.addEventListener("play",updateMusicToggle);weddingMusic.addEventListener("pause",updateMusicToggle);}
+
+// Stop wedding music when the phone/browser is minimized or the tab goes into the background.
+let resumeMusicAfterBackground=false;
+function handleVisibilityChange(){
+  if(!weddingMusic)return;
+  if(document.hidden){
+    resumeMusicAfterBackground=!weddingMusic.paused;
+    if(resumeMusicAfterBackground)weddingMusic.pause();
+  }else if(resumeMusicAfterBackground){
+    resumeMusicAfterBackground=false;
+    weddingMusic.play().catch(()=>{});
+  }
+}
+document.addEventListener("visibilitychange",handleVisibilityChange);
+window.addEventListener("pagehide",()=>{if(weddingMusic&&!weddingMusic.paused)weddingMusic.pause();});
 let autoScrollTimer=null;
 let autoScrollActive=false;
 
