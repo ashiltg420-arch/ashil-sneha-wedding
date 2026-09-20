@@ -207,3 +207,20 @@ radial-gradient(ellipse at 78% 25%,#739a58 0 7px,transparent 8px)}
 @media(max-width:700px){
   .card:before,.card:after,.detail-card:before,.detail-card:after,.message:before,.message:after,.compliments:before,.compliments:after,.wishes:before,.wishes:after{width:82px;height:78px;background-size:100% 100%}
 }
+
+
+/* Guest attendance window */
+.attendance{padding:0 0 70px}
+.attendance-card{background:rgba(255,250,242,.88);border:1px solid var(--line);padding:55px 7%;text-align:center;box-shadow:0 18px 50px rgba(64,21,30,.06);position:relative;overflow:hidden}
+.attendance-card:before,.attendance-card:after{content:"";position:absolute;pointer-events:none;width:100px;height:90px;background:radial-gradient(circle at 28% 30%,#c94f62 0 8px,transparent 9px),radial-gradient(circle at 55% 18%,#e0717e 0 7px,transparent 8px),radial-gradient(ellipse at 68% 60%,#5f8b48 0 9px,transparent 10px)}
+.attendance-card:before{left:-8px;top:-8px;transform:rotate(-10deg)}.attendance-card:after{right:-8px;bottom:-8px;transform:rotate(170deg)}.attendance-card>*{position:relative;z-index:1}
+.attendance-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:700px;margin:30px auto}
+.attendance-stats div{padding:18px 10px;border:1px solid rgba(184,137,60,.28);border-radius:14px;background:#fffdf8}
+.attendance-stats strong{display:block;font:600 32px "Cormorant Garamond";color:var(--burgundy)}.attendance-stats span{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.attendance-form{max-width:620px;margin:25px auto 38px;display:grid;gap:15px;text-align:left}.attendance-form label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700}
+.attendance-form select{display:block;width:100%;margin-top:7px;border:1px solid var(--line);background:#fffdf8;border-radius:10px;padding:13px;font:14px Manrope;color:var(--ink);outline:none}.attendance-form select:focus{border-color:var(--gold)}
+.optional{font-size:10px;letter-spacing:0;text-transform:none;font-weight:400}.form-message{min-height:20px;text-align:center;color:var(--burgundy);font-size:12px;margin:0}
+.attendance-list-heading{max-width:620px;margin:0 auto 12px;display:flex;justify-content:space-between;align-items:center;color:var(--burgundy);font:600 21px "Cormorant Garamond"}.attendance-list-heading small{font:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.attendance-list{max-width:620px;margin:auto;display:grid;gap:10px;text-align:left}.attendance-entry{padding:14px 16px;border-left:3px solid var(--gold);background:#fffdf8}.attendance-entry div{display:flex;justify-content:space-between;gap:12px;align-items:center}.attendance-entry strong{color:var(--burgundy);font-size:13px}.attendance-entry span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}.attendance-entry p{font:17px/1.45 "Cormorant Garamond";margin:6px 0 0;color:var(--ink)}
+.live-count{display:inline-block;vertical-align:middle;margin-left:8px;min-width:30px;padding:4px 9px;border-radius:999px;background:var(--burgundy);color:#fff;font:700 12px Manrope}
+@media(max-width:700px){.attendance-stats{grid-template-columns:1fr}.attendance-card{padding:45px 22px}.attendance-entry div{align-items:flex-start;flex-direction:column;gap:3px}}
