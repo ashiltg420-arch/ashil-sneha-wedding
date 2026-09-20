@@ -75,3 +75,40 @@ wishQuotes.forEach(quote=>{
     if(e.key==="Enter"||e.key===" "){e.preventDefault();useQuote();}
   });
 });
+
+
+/* Guest attendance and greeting window */
+const attendanceForm=document.getElementById("attendanceForm");
+const attendanceList=document.getElementById("attendanceList");
+const attendanceStatusMessage=document.getElementById("attendanceStatusMessage");
+const ATTENDANCE_KEY="ashil-sneha-attendance";
+function getAttendance(){try{return JSON.parse(localStorage.getItem(ATTENDANCE_KEY)||"[]")}catch(e){return[]}}
+function renderAttendance(){
+  if(!attendanceList)return;
+  const entries=getAttendance(), attending=entries.filter(x=>x.status==="Attending");
+  const people=attending.reduce((sum,x)=>sum+Number(x.people||0),0);
+  const wishes=JSON.parse(localStorage.getItem(KEY)||"[]");
+  document.getElementById("confirmedGuestCount").textContent=attending.length;
+  document.getElementById("attendingPeopleCount").textContent=people;
+  document.getElementById("wishCount").textContent=wishes.length;
+  document.getElementById("wishHeadingCount").textContent=wishes.length;
+  attendanceList.innerHTML=entries.length?entries.map(x=>`<article class="attendance-entry"><div><strong>${escapeHtml(x.name)}</strong><span>${escapeHtml(x.status)} · ${Number(x.people)} ${Number(x.people)===1?"guest":"guests"}</span></div>${x.message?`<p>“${escapeHtml(x.message)}”</p>`:""}</article>`).join(""):'<p class="empty">Be the first guest to confirm. ♡</p>';
+}
+if(attendanceForm){
+  attendanceForm.addEventListener("submit",e=>{
+    e.preventDefault();
+    const name=document.getElementById("attendanceName").value.trim(), status=document.getElementById("attendanceStatus").value;
+    const people=Math.max(1,Math.min(20,Number(document.getElementById("attendancePeople").value||1)));
+    const message=document.getElementById("attendanceMessage").value.trim();
+    if(!name||!status)return;
+    const entries=getAttendance();
+    entries.unshift({name,status,people:status==="Not attending"?0:people,message});
+    localStorage.setItem(ATTENDANCE_KEY,JSON.stringify(entries.slice(0,100)));
+    attendanceForm.reset(); document.getElementById("attendancePeople").value=1;
+    attendanceStatusMessage.textContent="Thank you! Your attendance has been recorded. ♡";
+    renderAttendance(); setTimeout(()=>attendanceStatusMessage.textContent="",3500);
+  });
+}
+renderAttendance();
+const baseRender=render;
+render=function(){baseRender();renderAttendance()};
