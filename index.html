@@ -98,11 +98,34 @@
       <p class="compliment-names">Anandhu<br>&amp;<br>Akshaya Anandhu</p>
     </section>
 
+    <section id="attendance" class="attendance section">
+      <div class="attendance-card">
+        <p class="eyebrow">We would love to know</p>
+        <h2>Guest Attendance</h2>
+        <p class="small">Please let Ashil &amp; Sneha know if you will be joining their special day.</p>
+        <div class="attendance-stats" aria-live="polite">
+          <div><strong id="confirmedGuestCount">0</strong><span>Guests Confirmed</span></div>
+          <div><strong id="attendingPeopleCount">0</strong><span>People Attending</span></div>
+          <div><strong id="wishCount">0</strong><span>Greetings &amp; Wishes</span></div>
+        </div>
+        <form id="attendanceForm" class="attendance-form">
+          <label>Your name<input id="attendanceName" maxlength="60" required placeholder="Your name"></label>
+          <label>Attendance<select id="attendanceStatus" required><option value="">Choose one</option><option value="Attending">Attending</option><option value="Maybe">Maybe</option><option value="Not attending">Not attending</option></select></label>
+          <label>Number of people<input id="attendancePeople" type="number" min="1" max="20" value="1" required></label>
+          <label>Greeting <span class="optional">(optional)</span><textarea id="attendanceMessage" maxlength="300" placeholder="Write a greeting for Ashil &amp; Sneha..."></textarea></label>
+          <button class="gold-btn" type="submit">Confirm Attendance</button>
+          <p id="attendanceStatusMessage" class="form-message" role="status"></p>
+        </form>
+        <div class="attendance-list-heading"><span>Guest Greetings</span><small>Latest first</small></div>
+        <div id="attendanceList" class="attendance-list"></div>
+      </div>
+    </section>
+
     <section id="wishes" class="wishes section">
       <div class="flower-corner left">❀</div>
       <div class="flower-corner right">❀</div>
       <p class="eyebrow">A little love from you</p>
-      <h2>Guest Wishes</h2>
+      <h2>Guest Wishes <span class="live-count" id="wishHeadingCount">0</span></h2>
       <p class="small">Leave a blessing or a message for Ashil &amp; Sneha.</p>
       <div class="wish-quotes" aria-label="Wedding wish inspirations">
         <div class="wish-quote active">“May your love grow deeper with every beautiful season of life.”</div>
