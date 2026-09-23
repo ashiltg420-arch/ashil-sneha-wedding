@@ -1,0 +1,17 @@
+{
+  "name": "Ashil & Sneha — Wedding Invitation",
+  "short_name": "Ashil & Sneha",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7efe2",
+  "theme_color": "#f7efe2",
+  "description": "Wedding invitation of Ashil & Sneha — 13 December 2026.",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
