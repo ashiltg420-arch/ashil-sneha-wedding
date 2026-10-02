@@ -1,33 +1,152 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" translate="no" class="notranslate">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Free Invitation Maker — Create Free Invitations</title>
-<meta name="description" content="Create beautiful editable invitations for free.">
-<style>
-:root{--wine:#6d1834;--gold:#b88a44;--cream:#fffaf1;--ink:#2e2630;--muted:#746a70}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:linear-gradient(135deg,#fffaf1,#f3e7dd);min-height:100vh}
-nav{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;background:#ffffffdd;backdrop-filter:blur(12px);border-bottom:1px solid #eaded1;position:sticky;top:0;z-index:5}
-.logo{font:700 27px Georgia,serif;color:var(--wine)}.logo small{font:11px Inter,sans-serif;color:var(--muted);margin-left:7px}
-nav a,.cta{padding:11px 17px;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid #eaded1;color:var(--wine);background:white}.cta{background:var(--wine);color:white;border-color:var(--wine)}
-.hero{max-width:1100px;margin:auto;padding:90px 24px 70px;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
-.eyebrow{letter-spacing:3px;text-transform:uppercase;font-size:11px;font-weight:800;color:var(--gold)}h1{font:600 clamp(52px,7vw,88px)/.94 Georgia,serif;color:var(--wine);margin:18px 0}h1 span{color:var(--gold)}.lead{font-size:19px;line-height:1.7;color:var(--muted);max-width:590px}.buttons{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}.button{display:inline-block;padding:14px 21px;border-radius:12px;text-decoration:none;font-weight:800}.primary{background:var(--wine);color:white}.secondary{background:white;color:var(--wine);border:1px solid #eaded1}
-.mock{background:#241f22;padding:12px;border-radius:32px;box-shadow:0 30px 70px #4b382733;transform:rotate(2deg)}.screen{background:var(--cream);border-radius:23px;min-height:560px;padding:50px 28px;text-align:center;color:var(--wine);display:flex;flex-direction:column;justify-content:center}.heart{font-size:34px;color:var(--gold)}.names{font:55px/1.05 Georgia,serif;margin:22px 0}.divider{width:80px;height:1px;background:var(--gold);margin:25px auto}.screen p{line-height:1.6}
-.features{background:white;padding:70px 6%;text-align:center;border-top:1px solid #eaded1}.features h2{font:42px Georgia,serif;color:var(--wine)}.grid{max-width:1000px;margin:35px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{padding:25px;border:1px solid #eaded1;border-radius:18px;background:#fffaf6}.feature b{display:block;color:var(--wine);margin-bottom:8px}.feature p{color:var(--muted);line-height:1.5;font-size:14px}
-footer{text-align:center;padding:35px;color:var(--muted);font-size:13px}
-@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:55px;gap:35px}.mock{transform:none}.grid{grid-template-columns:1fr}nav a{display:none}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7efe2">
+  <meta name="description" content="Wedding invitation of Ashil & Sneha — 13 December 2026.">
+  <meta name="google" content="notranslate">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Ashil & Sneha">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>Ashil & Sneha — Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav><div class="logo">Free Invitation Maker <small>100% Free</small></div><a class="cta" href="./builder/">Create Free Invitation</a></nav>
-<main>
-<section class="hero">
-<div><div class="eyebrow">Beautiful • Editable • Free</div><h1>Your event.<br><span>Your invitation.</span><br>Your way.</h1><p class="lead">Create beautiful online invitations in minutes. Choose a template, edit the details, preview it live, and share a free link — no coding and no paid editor.</p><div class="buttons"><a class="button primary" href="./builder/">Start Creating — Free</a><a class="button secondary" href="./invitation.html">View Demo Invitation</a></div></div>
-<div class="mock"><div class="screen"><div class="heart">♡</div><div class="eyebrow">A Celebration</div><div class="names">Your<br><span>&amp;</span><br>Invitation</div><div class="divider"></div><p>Customize your event</p><p>Choose a template<br>Edit • Preview • Share</p></div></div>
-</section>
-<section class="features"><div class="eyebrow">Everything you need</div><h2>Make it yours</h2><div class="grid"><div class="feature">🎨<b>Editable templates</b><p>Change names, dates, venues, messages, colours and styles.</p></div><div class="feature">🔗<b>Free sharing</b><p>Generate a self-contained invitation link without creating an account.</p></div><div class="feature">📱<b>Works everywhere</b><p>Designed for phones, tablets and desktop browsers.</p></div></div></section>
-</main>
-<footer>Free Invitation Maker — create and share beautiful invitations for free.</footer>
+  <div class="petals" aria-hidden="true"></div>
+
+  <div id="welcome" class="welcome">
+    <div class="mandala"></div>
+    <div class="welcome-card">
+      <div class="welcome-card-corner top-left" aria-hidden="true"></div>
+      <div class="welcome-card-corner bottom-right" aria-hidden="true"></div>
+      <div class="welcome-icon" aria-label="Wedding heart">♡</div>
+      <div class="gurudeva-mantra">With Warmest Greetings &amp; Blessings</div>
+      <p class="eyebrow">A Celebration of Love</p>
+      <h1>Wedding Invitation</h1>
+      <p class="welcome-names">Ashil <span>&amp;</span> Sneha</p>
+      <button id="openInvite" class="gold-btn">Open Invitation</button>
+    </div>
+  </div>
+
+  <audio id="weddingMusic" preload="auto" loop src="https://d2ol7oe51mr4n9.cloudfront.net/user_3JaT6rEnFH7bwNavYYi70WgtPzo/0bf61aef-4ac8-42bd-b71f-e8da6120f40d.mp3"></audio>
+  <button id="musicToggle" class="music-toggle" type="button" aria-label="Turn wedding music off" aria-pressed="true">♫ <span>Music On</span></button>
+
+  <main id="invitation" class="hidden">
+    <section class="hero section corner-floral-frame">
+      <div class="lily-corner lily-top-left" aria-hidden="true">✿</div>
+      <div class="lily-corner lily-top-right" aria-hidden="true">✿</div>
+      <div class="lily-corner lily-bottom-left" aria-hidden="true">✿</div>
+      <div class="lily-corner lily-bottom-right" aria-hidden="true">✿</div>
+      <div class="ornament top"></div>
+      <p class="eyebrow">With great joy and happiness</p>
+      <h1>Ashil <span>&amp;</span> Sneha</h1>
+      <p class="subtitle">cordially invite you to celebrate their wedding</p>
+      <div class="flower-divider">✿ ❁ ✿</div>
+      <div id="countdown" class="countdown" aria-label="Countdown to the wedding"></div>
+    </section>
+
+    <section class="card section">
+      <p class="eyebrow">The Families</p>
+      <h2>With the blessings of our families</h2>
+      <div class="families">
+        <div>
+          <h3>Ashil</h3>
+          <p>S/o. Gopalakrishnan &amp; Usha Gopalakrishnan</p>
+          <p>Thalakkattu Perumthittayil House,<br>Kadakkara, Ezhikkara</p>
+        </div>
+        <div class="ampersand">&amp;</div>
+        <div>
+          <h3>Sneha</h3>
+          <p>D/o. Rajesh M S &amp; Sreedevi Rajesh</p>
+          <p>Marathanthara House,<br>Perumpadanna, North Paravur</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="details section">
+      <div class="detail-card">
+        <span class="icon">❈</span>
+        <p class="eyebrow">Marriage</p>
+        <h2>Sunday</h2>
+        <p class="date">13 December 2026</p>
+        <p>Between <strong>10:30 AM to 11:00 AM</strong></p>
+        <div class="rule"></div>
+        <h3>Treesa Garden</h3>
+        <p>Mangalath Road,<br>Perumbadanna, North Paravur</p>
+        <a class="map-btn" href="https://maps.app.goo.gl/sxNYgMkaWMaSw1bAA" target="_blank" rel="noopener noreferrer">📍 Open in Google Maps</a>
+      </div>
+
+      <div class="detail-card">
+        <span class="icon">✦</span>
+        <p class="eyebrow">Reception</p>
+        <h2>Sunday</h2>
+        <p class="date">13 December 2026</p>
+        <p><strong>5:00 PM</strong></p>
+        <div class="rule"></div>
+        <h3>Infant Jesus Church Kadakkara</h3>
+        <p>North Paravur</p>
+        <a class="map-btn" href="https://maps.app.goo.gl/wAV98LArERzbvWy58" target="_blank" rel="noopener noreferrer">📍 Open in Google Maps</a>
+      </div>
+    </section>
+
+    <section class="message section">
+      <div class="quote-mark">“</div>
+      <p>Two hearts, one beautiful journey, and a lifetime of memories waiting to be made.</p>
+      <p class="small">Your presence and blessings will make our day even more special.</p>
+    </section>
+
+    <section class="compliments section">
+      <p class="eyebrow">With love &amp; blessings</p>
+      <h2>Best Compliments From</h2>
+      <p class="compliment-names">Anandhu, Akshaya Anandhu &amp; All Family Members</p>
+    </section>
+
+    <section id="wishes" class="wishes section">
+      <div class="flower-corner left">❀</div>
+      <div class="flower-corner right">❀</div>
+      <p class="eyebrow">A little love from you</p>
+      <h2>Guest Wishes <span class="live-count" id="wishHeadingCount">0</span></h2>
+      <p class="small">Leave a blessing or a message for Ashil &amp; Sneha. Wishes are shared publicly with everyone.</p>
+      <div class="wish-quotes" aria-label="Wedding wish inspirations">
+        <div class="wish-quote active">“May your love grow deeper with every beautiful season of life.”</div>
+        <div class="wish-quote">“Two hearts, one journey, countless memories. Wishing you a lifetime of happiness.”</div>
+        <div class="wish-quote">“May your home always be filled with love, laughter and togetherness.”</div>
+      </div>
+      <form id="wishForm" class="wish-form">
+        <label>Your name<input id="wishName" name="name" maxlength="60" required placeholder="Your name"></label>
+        <label>Your wishes<textarea id="wishMessage" name="message" maxlength="300" required placeholder="Write your blessing..."></textarea></label>
+        <button class="gold-btn" type="submit">Send Wishes</button>
+      </form>
+      <div id="wishList" class="wish-list"></div>
+    </section>
+
+    <section id="attendance" class="attendance section">
+      <div class="attendance-card">
+        <p class="eyebrow">We would love to know</p>
+        <h2>Guests Attending <span class="live-count" id="attendancePublicCount">0</span></h2>
+        <p class="small">The number shown is the total confirmed guests. Guest names are kept private.</p>
+        <form id="attendanceForm" class="attendance-form">
+          <label>Your name<input id="attendanceName" maxlength="60" required placeholder="Your name"></label>
+          <label>Attendance<select id="attendanceStatus" required><option value="">Choose one</option><option value="Attending">Attending</option><option value="Maybe">Maybe</option><option value="Not attending">Not attending</option></select></label>
+          <label>Number of people<input id="attendancePeople" type="number" min="1" max="20" value="1" required></label>
+          <button class="gold-btn" type="submit">Confirm Attendance</button>
+          <p id="attendanceStatusMessage" class="form-message" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-symbol">ॐ</div>
+      <p>Ashil &amp; Sneha</p>
+      <small>13 • 12 • 2026</small>
+    </footer>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
